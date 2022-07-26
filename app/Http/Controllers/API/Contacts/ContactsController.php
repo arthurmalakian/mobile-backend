@@ -26,7 +26,7 @@ class ContactsController extends Controller
      */
     public function store(Request $request)
     {
-        $contactData = $request->only('id','name','phone','email','status');
+        $contactData = $request->only('id','name','surname','phone','email','status');
         $contactData['image'] = $request->file('image');
         return ContactsService::storeContact($contactData);
     }
@@ -50,7 +50,7 @@ class ContactsController extends Controller
      */
     public function update($id,Request $request)
     {
-        $contactData = $request->only('id','name','phone','email','status');
+        $contactData = $request->only('id','name','surname','phone','email','status');
         $contactData['image'] = $request->file('image');
         return ContactsService::updateContact($id,$contactData);
     }

@@ -14,6 +14,7 @@ class Contact extends Model implements HasMedia
 
     protected $fillable = [
         'name',
+        'surname',
         'phone',
         'email',
         'status'
